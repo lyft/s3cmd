@@ -1,0 +1,96 @@
+# Fix warnings catched by lintian: spelling, bare hyphen, unintended
+# 'Cache-Control' expansion as macro
+--- s3cmd-1.1.0-beta3/s3cmd.1.orig	2012-05-28 18:06:12.399467659 +0200
++++ s3cmd-1.1.0-beta3/s3cmd.1	2012-05-28 18:11:01.354580791 +0200
+@@ -60,7 +60,7 @@
+ s3cmd \fBaccesslog\fR \fIs3://BUCKET\fR
+ Enable/disable bucket access logging
+ .TP
+-s3cmd \fBsign\fR \fISTRING-TO-SIGN\fR
++s3cmd \fBsign\fR \fISTRING\-TO\-SIGN\fR
+ Sign arbitrary string using the secret key
+ .TP
+ s3cmd \fBfixbucket\fR \fIs3://BUCKET[/PREFIX]\fR
+@@ -116,7 +116,7 @@
+ .TP
+ \fB\-\-configure\fR
+ Invoke interactive (re)configuration tool. Optionally
+-use as '\fB--configure\fR s3://come-bucket' to test access
++use as '\fB\-\-configure\fR s3://come\-bucket' to test access
+ to a specific bucket instead of attempting to list
+ them all.
+ .TP
+@@ -198,29 +198,29 @@
+ from sync
+ .TP
+ \fB\-\-exclude\-from\fR=FILE
+-Read --exclude GLOBs from FILE
++Read \-\-exclude GLOBs from FILE
+ .TP
+ \fB\-\-rexclude\fR=REGEXP
+ Filenames and paths matching REGEXP (regular
+ expression) will be excluded from sync
+ .TP
+ \fB\-\-rexclude\-from\fR=FILE
+-Read --rexclude REGEXPs from FILE
++Read \-\-rexclude REGEXPs from FILE
+ .TP
+ \fB\-\-include\fR=GLOB
+ Filenames and paths matching GLOB will be included
+ even if previously excluded by one of
+-\fB--(r)exclude(-from)\fR patterns
++\fB\-\-(r)exclude(\-from)\fR patterns
+ .TP
+ \fB\-\-include\-from\fR=FILE
+-Read --include GLOBs from FILE
++Read \-\-include GLOBs from FILE
+ .TP
+ \fB\-\-rinclude\fR=REGEXP
+-Same as --include but uses REGEXP (regular expression)
++Same as \-\-include but uses REGEXP (regular expression)
+ instead of GLOB
+ .TP
+ \fB\-\-rinclude\-from\fR=FILE
+-Read --rinclude REGEXPs from FILE
++Read \-\-rinclude REGEXPs from FILE
+ .TP
+ \fB\-\-bucket\-location\fR=BUCKET_LOCATION
+ Datacentre to create bucket in. As of now the
+@@ -244,22 +244,22 @@
+ default is binary/octet-stream.
+ .TP
+ \fB\-\-guess\-mime\-type\fR
+-Guess MIME-type of files by their extension or mime
+-magic. Fall back to default MIME-Type as specified by
+-\fB--default-mime-type\fR option
++Guess MIME\-type of files by their extension or mime
++magic. Fall back to default MIME\-Type as specified by
++\fB\-\-default-mime-type\fR option
+ .TP
+ \fB\-\-no\-guess\-mime\-type\fR
+ Don't guess MIME-type and use the default type
+ instead.
+ .TP
+ \fB\-m\fR MIME/TYPE, \fB\-\-mime\-type\fR=MIME/TYPE
+-Force MIME-type. Override both \fB--default-mime-type\fR and
+-\fB--guess-mime-type\fR.
++Force MIME\-type. Override both \fB\-\-default\-mime\-type\fR and
++\fB\-\-guess-mime-type\fR.
+ .TP
+ \fB\-\-add\-header\fR=NAME:VALUE
+ Add a given HTTP header to the upload request. Can be
+ used multiple times. For instance set 'Expires' or
+-'Cache-Control' headers (or both) using this options
++\&'Cache-Control' headers (or both) using this options
+ if you like.
+ .TP
+ \fB\-\-encoding\fR=ENCODING
+@@ -435,7 +435,7 @@
+ .SH AUTHOR
+ Written by Michal Ludvig <mludvig@logix.net.nz> and 15+ contributors
+ .SH CONTACT, SUPPORT
+-Prefered way to get support is our mailing list:
++Preferred way to get support is our mailing list:
+ .I s3tools\-general@lists.sourceforge.net
+ .SH REPORTING BUGS
+ Report bugs to 

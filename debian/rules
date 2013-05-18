@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+PACKAGE_NAME=s3cmd
+PACKAGE_DIR=$(CURDIR)/debian/$(PACKAGE_NAME)
+SHARE_DIR=/usr/share/$(PACKAGE_NAME)
+
+%:
+	dh $@ --with python2
+
+override_dh_auto_clean:
+	S3CMD_PACKAGING=1 python setup.py clean
+	-rm -rf S3/*.pyc build
+
+override_dh_auto_install:
+	S3CMD_PACKAGING=1 python setup.py install --no-compile \
+		 --root $(PACKAGE_DIR) \
+		 --install-lib $(SHARE_DIR) \
+		 --install-scripts $(SHARE_DIR)
