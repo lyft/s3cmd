@@ -1,0 +1,12 @@
+The instructions below will create a debian package.
+
+git clone git@github.com:lyft/s3cmd.git
+mv s3cmd s3cmd_1.1.0beta3.lyft
+cd s3cmd_1.1.0beta3.lyft/
+git checkout 1.1.0-beta3
+cd ..
+mv s3cmd_1.1.0beta3.lyft/debian .
+tar czf s3cmd_1.1.0beta3.lyft.orig.tar.gz s3cmd_1.1.0beta3.lyft
+mv debian s3cmd_1.1.0beta3.lyft
+cd s3cmd_1.1.0beta3.lyft
+debuild -us -uc
